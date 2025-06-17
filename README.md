@@ -4,7 +4,7 @@
   <img src="bird.png" height="250"/>
 </p>
 
-This project showcases the **Spatial Web features announced at WWDC25**, including support for `<model>` and `<link rel="spatial-backdrop">` in Safari on visionOS. It demonstrates how to present interactive 3D content directly on the web using USDZ files—no additional frameworks or plugins required.
+This project showcases the **[Spatial Web features announced at WWDC25](https://developer.apple.com/videos/play/wwdc2025/237/)**, including support for `<model>` and `<link rel="spatial-backdrop">` in Safari on visionOS. It demonstrates how to present interactive 3D content directly on the web using USDZ files—no additional frameworks or plugins required.
 
 Skydancer is a fictional mythical bird rendered in 3D, designed as a creative example of spatial web presentation.
 
