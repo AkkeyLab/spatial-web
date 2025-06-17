@@ -24,6 +24,7 @@
       The Skydancer is a mythical bird said to glide effortlessly through the upper clouds,
       leaving trails of shimmering feathers in its wake. Revered in legend for its
       grace and power, the Skydancer appears only at dawn on the calmest of days.<br><br>
+      <!-- <a onclick="turnRight()">See it from a different angle!</a> -->
       <span class="credit">
         "<a href="https://skfb.ly/6vLBp" target="_blank" rel="noopener">phoenix bird</a>" by
         NORBERTO-3D is licensed under
@@ -39,16 +40,19 @@
     if (window.HTMLModelElement) {
       model.ready.then(() => {
         loading.style.display = 'none';
-
-        const matrix = model.entityTransform;
-        const newMatrix = matrix.scale(1.8, 1.8, 1.8);
-        model.entityTransform = newMatrix;
       }).catch(() => {
         loading.innerText = "Failed to load model.";
       });
     } else {
       loading.style.display = 'none';
     }
+
+    // It won't work unless you remove `stagemode="orbit"`
+    // function turnRight() {
+    //   const matrix = model.entityTransform;
+    //   const newMatrix = matrix.rotateAxisAngle(0, 1, 0, 90);
+    //   model.entityTransform = newMatrix;
+    // }
   </script>
 </body>
 
