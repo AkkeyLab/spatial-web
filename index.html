@@ -3,21 +3,33 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Hello, Spatial Web!</title>
+  <title>Skydancer - A Mythical Bird</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <h1>Hello, Spatial Web!</h1>
+  <div id="wrapper">
+    <h1>Skydancer</h1>
 
-  <div id="wrapper" style="position: relative;">
     <div id="loading">
       <div class="spinner"></div>
       <p>Loading 3D model...</p>
     </div>
-    <model src="teapot.usdz" stagemode="orbit" id="3d-model">
-      <img src="fallback.jpg" alt="3D fallback">
+
+    <model src="bird.usdz" id="3d-model" stagemode="orbit" loop autoplay>
+      <img src="bird.png" alt="bird image">
     </model>
+
+    <p class="description">
+      The Skydancer is a mythical bird said to glide effortlessly through the upper clouds,
+      leaving trails of shimmering feathers in its wake. Revered in legend for its
+      grace and power, the Skydancer appears only at dawn on the calmest of days.<br><br>
+      <span class="credit">
+        "<a href="https://skfb.ly/6vLBp" target="_blank" rel="noopener">phoenix bird</a>" by
+        NORBERTO-3D is licensed under
+        <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC Attribution 4.0</a>.
+      </span>
+    </p>
   </div>
 
   <script>
@@ -27,6 +39,10 @@
     if (window.HTMLModelElement) {
       model.ready.then(() => {
         loading.style.display = 'none';
+
+        const matrix = model.entityTransform;
+        const newMatrix = matrix.scale(1.8, 1.8, 1.8);
+        model.entityTransform = newMatrix;
       }).catch(() => {
         loading.innerText = "Failed to load model.";
       });
